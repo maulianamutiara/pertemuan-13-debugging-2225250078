@@ -1,9 +1,15 @@
+# Pertemuan 13 — Debugging, Tracing, Testing, dan Test Case
 
-# Pertemuan 13 - Debugging dan Testing
+## Identitas
 
-Nama: Mauliana Mutiara  
-NIM: 2225250078  
-Kelas: 3A
+- Nama: Mauliana Mutiara
+- NIM: 2225250078
+- Kelas: 3A
+- Mata Kuliah: Algoritma dan Pemrograman
+
+## Tujuan
+
+Pada pertemuan ini, saya belajar melakukan debugging, menelusuri jalannya program, membuat test case, dan memperbaiki kesalahan pada kode Python.
 
 ## Kasus
 
@@ -46,6 +52,38 @@ Jalankan perintah berikut pada terminal dari folder utama:
 
 python praktik/praktik_4_debugging.py
 
+## Laporan Bug Praktik 4
+
+### Bug 1 — Perhitungan Rata-rata
+
+**Kesalahan:** Program membagi jumlah nilai dengan angka 5, padahal jumlah data dapat berbeda.
+
+**Perbaikan:** Mengganti pembagi dengan `len(nilai)` agar sesuai dengan jumlah data.
+
+### Bug 2 — Status Kelulusan
+
+**Kesalahan:** Program menggunakan kondisi `nilai > 60`, sehingga nilai 60 dinyatakan tidak lulus.
+
+**Perbaikan:** Mengubah kondisi menjadi `nilai >= 60`.
+
+### Bug 3 — Nilai Tertinggi
+
+**Kesalahan:** Program menggunakan kondisi perbandingan yang terbalik sehingga tidak mendapatkan nilai tertinggi dengan benar.
+
+**Perbaikan:** Menggunakan nilai pertama sebagai nilai tertinggi awal, kemudian membandingkannya dengan nilai berikutnya menggunakan kondisi `x > tertinggi`.
+
+## Test Case dan Hasil Retest
+
+| ID | Pengujian | Hasil yang Diharapkan | Status |
+|---|---|---|---|
+| T1 | Rata-rata `[80, 60, 90, 70]` | 75.0 | PASS |
+| T2 | Rata-rata `[100, 80]` | 90.0 | PASS |
+| T3 | Status nilai 60 | Lulus | PASS |
+| T4 | Status nilai 59 | Tidak lulus | PASS |
+| T5 | Nilai tertinggi `[80, 60, 90, 70]` | 90 | PASS |
+
+Seluruh lima test case berhasil setelah perbaikan dilakukan.
+
 ## Refleksi
 
-Saya belajar bahwa program yang dapat dijalankan belum tentu menghasilkan jawaban yang benar. Karena itu, saya perlu membuat test case, memeriksa penyebab kesalahan, memperbaiki kode, dan melakukan pengujian ulang.
+Dari praktik ini, saya belajar bahwa kesalahan kecil dalam kondisi dan perhitungan dapat menyebabkan hasil program tidak sesuai harapan. Dengan melakukan tracing dan testing, kesalahan dapat ditemukan dan diperbaiki. Setelah kode diperbaiki, program perlu diuji kembali untuk memastikan hasilnya sudah benar.
